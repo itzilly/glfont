@@ -2,15 +2,16 @@ package glfont
 
 import (
 	"fmt"
-	"github.com/go-gl/gl/all-core/gl"
-	"github.com/golang/freetype"
-	"github.com/golang/freetype/truetype"
-	"golang.org/x/image/font"
-	"golang.org/x/image/math/fixed"
 	"image"
 	"image/draw"
 	"io"
 	"io/ioutil"
+
+	"github.com/go-gl/gl/v4.1-core/gl"
+	"github.com/golang/freetype"
+	"github.com/golang/freetype/truetype"
+	"golang.org/x/image/font"
+	"golang.org/x/image/math/fixed"
 )
 
 // A Font allows rendering of text to an OpenGL context.
@@ -34,7 +35,7 @@ type character struct {
 	bearingV  int    //glyph bearing vertical
 }
 
-//GenerateGlyphs builds a set of textures based on a ttf files gylphs
+// GenerateGlyphs builds a set of textures based on a ttf files gylphs
 func (f *Font) GenerateGlyphs(low, high rune) error {
 	//create a freetype context for drawing
 	c := freetype.NewContext()
@@ -127,7 +128,7 @@ func (f *Font) GenerateGlyphs(low, high rune) error {
 	return nil
 }
 
-//LoadTrueTypeFont builds OpenGL buffers and glyph textures based on a ttf file
+// LoadTrueTypeFont builds OpenGL buffers and glyph textures based on a ttf file
 func LoadTrueTypeFont(program uint32, r io.Reader, scale int32, low, high rune, dir Direction) (*Font, error) {
 	data, err := ioutil.ReadAll(r)
 	if err != nil {

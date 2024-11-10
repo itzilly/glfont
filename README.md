@@ -81,8 +81,8 @@ import (
 	"runtime"
 
 	"github.com/go-gl/gl/all-core/gl"
-	"github.com/go-gl/glfw/v3.1/glfw"
-	"github.com/nullboundary/glfont"
+	"github.com/go-gl/glfw/v3.3/glfw"
+	"github.com/itzilly/glfont"
 )
 
 const windowWidth = 1920
@@ -100,8 +100,8 @@ func main() {
 	defer glfw.Terminate()
 
 	glfw.WindowHint(glfw.Resizable, glfw.True)
-	glfw.WindowHint(glfw.ContextVersionMajor, 3)
-	glfw.WindowHint(glfw.ContextVersionMinor, 2)
+	glfw.WindowHint(glfw.ContextVersionMajor, 4)
+	glfw.WindowHint(glfw.ContextVersionMinor, 1)
 	glfw.WindowHint(glfw.OpenGLProfile, glfw.OpenGLCoreProfile)
 	glfw.WindowHint(glfw.OpenGLForwardCompatible, glfw.True)
 
